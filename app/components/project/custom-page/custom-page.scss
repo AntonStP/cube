@@ -1,11 +1,16 @@
 .custom-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   min-height: 100%;
   position: relative;
   @extend %DEFAULT;
   letter-spacing: 0.02em;
-
-  //background: #ee392e;
+  background: #303936;
   overflow: hidden;
+  perspective: 3800px;
+
 
   img {
     height: 100%;

@@ -1,1 +1,1 @@
-// import "./map/map";
+import "./cube/cube";
