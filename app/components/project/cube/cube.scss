@@ -3,7 +3,9 @@
   @include option(width, 1px);
   @include option(height, 1px);
   transform-style: preserve-3d;
-  transition: transform .1s linear;
+  transition: transform .5s linear;
+  user-select: none;
+  cursor: pointer;
 
   &__side {
     position: absolute;
@@ -16,7 +18,7 @@
     color: $WHITE;
     background: $BLACK;
     opacity: .6;
-    border: 1px solid $WHITE;
+    border: 3px solid $WHITE;
     box-sizing: border-box;
     &_1 {
       top: 0;
