@@ -5,7 +5,9 @@
   transform-style: preserve-3d;
   transition: transform .5s linear;
   user-select: none;
-  cursor: pointer;
+  pointer-events: none;
+  background: green;
+
 
   &__side {
     position: absolute;
@@ -50,6 +52,15 @@
       left: 50%;
       transform: translate3d(-50%,0%,0px) rotateX(90deg) rotateY(-180deg);
     }
+  }
 
+  &__active-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include option(width, 350px);
+    @include option(height, 350px);
+    background: red;
+    cursor: pointer;
   }
 }

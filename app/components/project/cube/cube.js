@@ -1,43 +1,50 @@
-// const cube = document.querySelector('.cube');
-//
-// let X = 0;
-// let Y = 0;
-// let pressed = {"ArrowUp": false,"ArrowRight": false,"ArrowDown": false,"ArrowLeft": false,};
-// document.addEventListener("keydown", rotate);
-//
-// function rotate(event) {
-//     pressed.hasOwnProperty(event.code) ?  pressed[event.code] = true : null;
-//     for (let prop in pressed) {
-//         if(pressed["ArrowUp"]) X+=1;
-//         if(pressed["ArrowDown"]) X-=1;
-//         if(pressed["ArrowLeft"]) Y-=1;
-//         if(pressed["ArrowRight"]) Y+=1;
-//         console.log(`${prop} -> 1`, pressed[prop]);
-//     }
-//     cube.style.transform = `rotateX(${X}deg) rotateY(${Y}deg)`;
-//
-//     document.addEventListener('keyup', function () {
-//         for (let prop in pressed) {
-//             pressed[prop] = false;
-//         }
-//     })
-// }
-
 const cube = document.querySelector('.cube');
+const cubeZone = document.querySelector('.cube__active-zone');
+document.ondragstart = ()=> {return false;};
 
-document.ondragstart = function() {
-    return false;
-};
 
-document.addEventListener("pointerdown", function (event) {
-    const touchStart = {x:event.clientX, y:event.clientY};
-    document.onpointermove = function (event) {
-        let touchMove = {x:event.clientX, y:event.clientY};
-        cube.style.transform = `rotateY(${(touchMove.x - touchStart.x)*7}deg) rotateX(${(-touchMove.y+touchStart.y)*7}deg)`;
-    };
-});
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { //для touch устройств
+    document.addEventListener("touchstart", function (event) {
+        const target = event.target.closest(".cube__active-zone");
+        if (!target) return;
+        const coordStart=event.touches[0];
+        let touchStart = {x:coordStart.pageX, y:coordStart.pageY};
+        cubeZone.ontouchmove = function (event) {
+            let touchMove = {x:event.touches[0].pageX, y:event.touches[0].pageY};
+            let rotY = ((touchMove.x - touchStart.x)/360).toFixed(2);
+            let rotX = ((-touchMove.y + touchStart.y)/360).toFixed(2);
+            cube.style.transform = `rotateY(${rotY}turn) rotateX(${rotX}turn)`;
+        };
+        document.addEventListener('touchend', function () {
+            cubeZone.touchmove=null;
+            touchStart = {};
+        });
+    });
 
-document.addEventListener('pointerup', function () {
-    document.onpointermove=null;
-    console.log("jo2")
-});
+
+
+} else { //для компов
+    document.addEventListener("pointerdown", function (event) {
+        const target = event.target.closest(".cube__active-zone");
+        if (!target) return;
+        let touchStart = {x:event.clientX, y:event.clientY};
+        cubeZone.onpointermove = function (event) {
+            let touchMove ={x:event.clientX, y:event.clientY};
+            let rotY = ((touchMove.x - touchStart.x)/360).toFixed(2);
+            let rotX = ((-touchMove.y + touchStart.y)/360).toFixed(2);
+            cube.style.transform = `rotateY(${rotY}turn) rotateX(${rotX}turn)`;
+            // consoleTransform(rotY,rotX);
+        };
+        document.addEventListener('pointerup', function () {
+            cubeZone.onpointermove=null;
+            touchStart = {};
+        });
+    });
+
+}
+
+// function consoleTransform(rotY,rotX) {
+//     console.log("transform", cube.style.transform)
+//     if((+rotY>-0.125 && +rotY<0.125) && (+rotX>-0.125 && +rotX<0.125)) console.log("1");
+//     if((+rotY>-0.125 && +rotY<0.125) && (+rotX>-0.125 && +rotX<0.125)) console.log("1");
+// }

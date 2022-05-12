@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bea2fff7-408b-4f58-a693-5fff3e80559d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/framework/page/page.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/framework/page/page.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/project/cube/cube.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/project/cube/cube.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/project/cube/cube.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/project/cube/cube.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/project/custom-page/custom-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/project/custom-page/custom-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +70,7 @@
       <workItem from="1651145314727" duration="7711000" />
       <workItem from="1651678780965" duration="435000" />
       <workItem from="1652283935365" duration="1769000" />
-      <workItem from="1652343643363" duration="15774000" />
+      <workItem from="1652343643363" duration="21766000" />
     </task>
     <servers />
   </component>
