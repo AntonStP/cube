@@ -1,3 +1,5 @@
+import {randomInteger} from "../utils/randomInteger";
+
 const cube = document.querySelector('.cube');
 const cubeZone = document.querySelector('.cube__active-zone');
 document.ondragstart = ()=> {return false;};
@@ -19,6 +21,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
     //     document.addEventListener('touchend', function () {
     //         cubeZone.touchmove=null;
     //         touchStart = touchMove;
+    //         consoleTransform(randomInteger(1,6));
+    //         document.onpointerup=null;
     //     });
     // });
 
@@ -33,18 +37,40 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
             let rotY = ((touchMove.x - touchStart.x)/360).toFixed(2);
             let rotX = ((-touchMove.y + touchStart.y)/360).toFixed(2);
             cube.style.transform = `rotateY(${rotY}turn) rotateX(${rotX}turn)`;
-            // consoleTransform(rotY,rotX);
         };
-        document.addEventListener('pointerup', function () {
+        document.onpointerup = function () {
             cubeZone.onpointermove=null;
             touchStart = touchMove;
-        });
+            consoleTransform(randomInteger(1,6));
+            document.onpointerup=null;
+        };
     });
 
 }
 
-// function consoleTransform(rotY,rotX) {
-//     console.log("transform", cube.style.transform)
-//     if((+rotY>-0.125 && +rotY<0.125) && (+rotX>-0.125 && +rotX<0.125)) console.log("1");
-//     if((+rotY>-0.125 && +rotY<0.125) && (+rotX>-0.125 && +rotX<0.125)) console.log("1");
-// }
+function consoleTransform(side) {
+    console.log("transform", cube.style.transform);
+    console.log("side", side)
+    setTimeout(()=> {
+        switch (side) {
+            case 1 :
+                cube.style.transform = `rotateY(${0}turn) rotateX(${0}turn)`;
+                break;
+            case 2 :
+                cube.style.transform = `rotateY(${-0.25}turn) rotateX(${0}turn)`;
+                break;
+            case 3 :
+                cube.style.transform = `rotateY(${0.5}turn) rotateX(${0}turn)`;
+                break;
+            case 4 :
+                cube.style.transform = `rotateY(${0.25}turn) rotateX(${0}turn)`;
+                break;
+            case 5 :
+                cube.style.transform = `rotateY(${0}turn) rotateX(${-0.25}turn)`;
+                break;
+            case 6 :
+                cube.style.transform = `rotateY(${-0.5}turn) rotateX(${-0.25}turn)`;
+                break;
+        }
+    },510)
+}
