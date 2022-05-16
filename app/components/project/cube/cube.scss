@@ -3,10 +3,13 @@
   @include option(width, 1px);
   @include option(height, 1px);
   transform-style: preserve-3d;
-  transition: transform .5s linear;
+  transition: transform 2s linear;
   user-select: none;
   pointer-events: none;
   background: green;
+  &_rotating {
+    transition: transform 4s cubic-bezier(.37,.38,.28,1.24);
+  }
 
 
   &__side {
