@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bea2fff7-408b-4f58-a693-5fff3e80559d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/project/utils/randomInteger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/style/_animation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/project/cube/frazes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/project/cube/cube.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/project/cube/cube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/style/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/style/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/project/custom-page/custom-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/project/custom-page/custom-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +79,11 @@
       <workItem from="1651678780965" duration="435000" />
       <workItem from="1652283935365" duration="1769000" />
       <workItem from="1652343643363" duration="22545000" />
-      <workItem from="1652429160638" duration="3151000" />
+      <workItem from="1652429160638" duration="24317000" />
+      <workItem from="1652688679973" duration="617000" />
+      <workItem from="1652698673458" duration="8734000" />
+      <workItem from="1652714455623" duration="4141000" />
+      <workItem from="1652775993058" duration="1296000" />
     </task>
     <servers />
   </component>
